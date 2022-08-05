@@ -1,6 +1,15 @@
-const mongodb = require('../db/connect')
-const controller = require('../controllers/deck')
+const routes = require("express").Router();
 
-const routes = require('express').Router()
-routes.post('/add', controller.adddeck) 
-module.exports = routes
+const controller = require("../controllers/deck");
+
+routes.get("/", controller.getAllDecks);
+
+routes.get("/:id", controller.getDeck);
+
+routes.post("/", controller.addDeck);
+
+routes.patch("/:id", controller.updateDeck);
+
+routes.delete("/:id", controller.deleteDeck);
+
+module.exports = routes;

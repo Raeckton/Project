@@ -1,6 +1,28 @@
-POST http://localhost:3000/deck/add HTTP/1.1
+POST http://localhost:3000/decks/add HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Decks"
+    "title": "something",
+    "overview": "anytthing"
 }
+
+###
+
+GET http://localhost:3000/decks/ HTTP/1.1
+
+###
+
+GET http://localhost:3000/decks/62d74a0bcd90f78c9c3d0f00 HTTP/1.1
+
+###
+
+PATCH http://localhost:3000/decks/62d74a0bcd90f78c9c3d0f00 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "epicdeck"
+}
+
+###
+
+DELETE http://localhost:3000/decks/62d74a0bcd90f78c9c3d0f00 HTTP/1.1
